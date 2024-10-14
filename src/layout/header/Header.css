@@ -1,0 +1,259 @@
+/* Estilos generales */
+.header-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  background-color: rgba(255, 255, 255, 0);
+  color: #F9F6F2;
+  padding: 10px;
+  z-index: 3000;
+  border-bottom: 1px solid #F9F6F2;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.transparent-bg {
+  background-color: rgba(255, 255, 255, 0);
+  color: #F9F6F2;
+}
+
+.logo {
+  margin-left: 10px;
+}
+
+.logo img {
+  height: 50px;
+  margin-top: 14px;
+  margin-left: -100%; 
+  padding-left: 0; 
+  text-align: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-left: 3%;
+}
+
+.nav-links .nav-link {
+  text-decoration: none;
+  color: #F9F6F2;
+  font-size: 10px;
+  transition: font-size 0.2s ease;
+  margin-right: 17px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.nav-links .nav-link:hover {
+  font-size: 13px;
+}
+
+.user-info {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  margin-right: 75px;
+}
+
+.user-cart-container {
+  position: relative;
+  margin-left: 20px;
+}
+
+.user-cart-container .bag-shopping {
+  font-size: 1.5em;
+}
+
+.cart-counter {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: black;
+  color: #F9F6F2;
+  border-radius: 50%;
+  padding: 6px;
+  font-size: 0.75rem;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.white-icons {
+  color: #F9F6F2;
+}
+
+.black-icons {
+  color: black;
+}
+
+.scroll-bg-white {
+  background-color: #F9F6F2;
+}
+
+.scroll-bg-white .nav-links .nav-link {
+  color: black;
+}
+
+.scroll-bg-white .user-info .bag-shopping,
+.scroll-bg-white .user-info .user-icon {
+  color: black;
+}
+
+@media (max-width: 767px) {
+  .header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    height: auto; 
+    padding: 10px;
+    border-bottom: none;
+    margin-left: 0%; 
+    padding-top: 8%;
+  }
+
+  .logo img {
+    height: 25px; 
+    margin-left: 20%;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    margin-left: 45%;
+
+  }
+
+  .user-cart-container .bag-shopping,
+  .material-symbols-outlined.user-icon {
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 15px;
+  }
+
+  .material-symbols-outlined.user-icon {
+    font-size: 1.4em;
+    margin-left: 6px;
+    font-weight: 250;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .menu-icon.black {
+    color: black;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F9F6F2;
+    color: black;
+    display: none;
+    z-index: 1000;
+    padding-top: 4rem;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    transform: translateY(-100%);
+    
+  }
+
+  .mobile-menu.open {
+    transform: translateY(0%);
+    display: flex;
+
+
+  }
+
+  .mobile-logo {
+    text-align: left;
+    margin-left: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .mobile-logo img {
+    height: 15px;
+    vertical-align: middle;
+    margin-top: -5rem;
+  }
+
+
+  .close-button {
+    position: absolute;
+    top: 35px;
+    right: 10px;
+    cursor: pointer;
+    color: black;
+  }
+
+  #root > header > div.mobile-menu.open > nav{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+    margin-top: 32%;
+    
+  }
+  .mobile-menu .mobile-nav-links .nav-link {
+    text-decoration: none; 
+    color: black; 
+    font-size: 14px;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+    
+  }#root > header > div.user-info.white-icons{
+    margin-left: 65%;
+  }
+  .logo-blanco-mobile {
+    height: 30px;
+    margin-left: 185%; 
+  }
+  
+ 
+  .close-button .fa-times {
+    margin-right: auto; 
+  .header-nav .scroll-bg-white{
+    padding-top: 27px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .nav-links {
+    font-size: 12px; 
+    margin-left: 0;
+  }
+
+  .nav-links .nav-link {
+    margin-right: 10px; 
+  }
+
+  .nav-links .nav-link:hover {
+    font-size: 14px; 
+  }
+  
+
+  
+  .logo img {
+    margin-left: -45%;
+    margin-top: 5%;
+    height: 46px;
+  }
+}
+}

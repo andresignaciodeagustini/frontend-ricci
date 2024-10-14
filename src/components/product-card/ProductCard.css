@@ -1,0 +1,238 @@
+/* Estilos generales */
+.product-card {
+    background-color: #F9F6F2;
+    width: 300px;
+    transition: margin 0.3s, border 0.3s, box-shadow 0.3s;
+    margin-bottom: 68px;
+    position: relative;
+    height: 500px;
+    color: black;
+    overflow: hidden;
+}
+
+.product-image {
+    position: relative;
+    height: 200px;
+}
+
+.product-image img {
+    width: 100%;
+    
+    object-fit: cover;
+}
+
+.btn-icon-bag, .btn-icon-eye {
+    position: absolute;
+    top: 10px;
+    color: black;
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    font-size: 13px; /* Reducir el tamaño del ícono */
+    margin-right: 8%; /* Ajustar la posición horizontal */
+}
+
+.btn-icon-bag {
+    right: 7px;
+}
+
+.btn-icon-eye {
+    right: 30px;
+    margin-bottom: 18%;
+}
+
+.btn-icon-bag:hover,
+.btn-icon-eye:hover {
+    transform: scale(1.2);
+    border: none;
+    background-color: transparent;
+}
+
+.btn-icon-bag.active {
+    color: white;
+}
+
+.card-footer {
+    padding-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #242424;
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    right: 0;
+}
+
+.card-footer button {
+    font-size: 10px;
+    letter-spacing: 1px;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 15px 75px;
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
+    color: black;
+}
+
+.card-footer button.btn-icon {
+    padding: 12px 8px;
+    color: #a4a4a4;
+}
+
+.product-models {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 8px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.product-name {
+    font-size: px; /* Reducir el tamaño de la fuente para el nombre del producto */
+    text-transform: uppercase; /* Convertir el texto a mayúsculas */
+    padding: 10px 0;
+    margin-top: 55%;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Limita a una línea */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Añade puntos suspensivos cuando el texto se desborda */
+    line-clamp: 1; /* Propiedad estándar (en fase de adopción) */
+}
+
+.product-name a {
+    font-size: 10px;
+    color: black;
+    display: block;
+    text-decoration: none;
+}
+
+.product-name a:hover {
+    text-decoration: none;
+}
+
+.product-price {
+    font-size: 10px; /* Reducir el tamaño de la fuente para el precio */
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+    line-height: 18px; /* Ajustar la altura de línea */
+    text-align: left; /* Alinear a la izquierda */
+}
+
+.entry-date {
+    font-size: 12px;
+    color: black;
+    margin-top: 8px;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 767px) {
+    .product-card {
+        width: 75%;
+        max-width: 300px;
+        margin: 0 auto 20px;
+        height: 400px;
+    }
+
+    .product-image {
+        height: 150px;
+    }
+
+    .btn-icon-bag, .btn-icon-eye {
+        right: auto; /* Desactivar la posición derecha */
+        margin-left: 68%; /* Ajustar la posición horizontal */
+    }
+
+    .btn-icon-eye {
+        top: 12px; /* Ajustar la posición vertical */
+        margin-bottom: 8%; /* Agregar margen inferior */
+        left: 14px; /* Ajustar el margen izquierdo para el ícono de ojo */
+    }
+
+    .card-footer button {
+        font-size: 10px;
+        padding: 15px 80px;
+    }
+
+    .card-body {
+        padding: 6%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-right: 11%;
+    }
+
+    .product-name {
+        font-size: 0.8rem; /* Ajustar tamaño de fuente para pantallas pequeñas */
+    }
+
+    .product-price {
+        font-size: 8px; /* Ajustar tamaño de fuente para pantallas pequeñas */
+        margin-left: 17%;
+        margin-top: -10px;
+    }
+
+    .product-discount-price span {
+        margin-right: 4px;
+    }
+
+    .entry-date {
+        display: none;
+    }
+
+    .product-card {
+        margin-bottom: 10%;
+    }
+
+    .main-footer {
+        margin-top: 5%;
+    }
+
+    .product-list-title {
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+}
+
+/* Media query para tabletas */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .btn-icon-bag, .btn-icon-eye {
+        font-size: 11px; /* Ajustar tamaño de los íconos para pantallas de tabletas */
+        right: auto; /* Desactivar la posición derecha */
+        margin-left: 68%; /* Ajustar la posición horizontal */
+    }
+
+    .btn-icon-eye {
+        top: 12px; /* Ajustar la posición vertical */
+        margin-bottom: 8%; /* Agregar margen inferior */
+        left: 19px; /* Ajustar el margen izquierdo para el ícono de ojo */
+    }
+
+    .product-card {
+        width: 80%;
+        max-width: 350px; /* Ajustar el ancho máximo para pantallas de tabletas */
+        height: 450px; /* Ajustar la altura para pantallas de tabletas */
+    }
+
+    .product-image {
+        height: 180px; /* Ajustar la altura de la imagen para pantallas de tabletas */
+    }
+}

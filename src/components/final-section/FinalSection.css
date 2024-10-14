@@ -1,0 +1,187 @@
+.final-section {
+    margin-bottom: 3%;
+    display: flex;
+    width: 100%;
+    height: 500px;
+    background-color: #f8f8f8;
+    margin-top: 5%;
+}
+
+.final-section-content {
+    display: flex;
+    width: 90%;
+    height: 100%;
+}
+
+.final-section-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.final-section-image img {
+    width: 97%;
+    height: 109%;
+     /* Mantiene la proporción de la imagen */
+}
+
+.final-section-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    color: #333;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-left: 20px;
+    height: 100%; /* Asegura que el contenedor del texto ocupe el 100% de la altura disponible */
+    max-width: 30%; 
+}
+
+.final-section-text h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.final-section-text p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.buy-now-link {
+    font-size: 10px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    position: relative;
+    text-align: center;
+}
+
+.buy-now-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: #333;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.buy-now-link:hover::after {
+    transform: scaleX(1);
+    background-color: #555;
+}
+
+/* Media query para dispositivos móviles */
+/* Media query para dispositivos móviles */
+@media (max-width: 767px) {
+    .final-section {
+        height: auto; /* Permitir que la sección ajuste su altura según el contenido */
+        flex-direction: column;
+        margin-top: 3%;
+        padding: 10px; /* Reducir el padding para ahorrar espacio */
+    }
+
+    .final-section-content {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding: 10px; /* Reducir el padding */
+    }
+
+    .final-section-image {
+        flex: none;
+        width: 100%;
+        padding: 0;
+    }
+
+    .final-section-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .final-section-text {
+        flex: none;
+        width: 90%; /* Aumentar el ancho del texto para distribuirlo mejor */
+        margin-left: 0;
+        text-align: center;
+        padding: 10px; /* Reducir el padding para ahorrar espacio */
+    }
+
+    .final-section-text h2 {
+        font-size: 18px; /* Mantener el título con un tamaño legible */
+        margin-bottom: 5px; /* Reducir el margen inferior */
+        margin-left:20%;
+        margin-top:23%;
+    }
+
+    .final-section-text p {
+        font-size: 12px; /* Reducir el tamaño del texto */
+        width: 135px;
+        margin-left: -47%;
+
+        margin-bottom: 10px; /* Reducir el margen inferior */
+    }
+
+    .buy-now-link {
+        font-size: 11px; /* Ajustar el tamaño del enlace */
+        margin-top: 5%;
+        white-space: nowrap; /* Reducir el margen superior */
+        margin-left: -20%;
+
+    }
+}
+
+/* Media query para tabletas */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .final-section {
+        height: auto;
+    }
+
+    .final-section-content {
+        flex-direction: column;
+    }
+
+    .final-section-image {
+        flex: none;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .final-section-image img {
+        max-width: 100%;
+        height: auto;
+        margin-left: 14%;
+    }
+
+    .final-section-text {
+        flex: none;
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+        margin-left: 43%;
+    }
+
+    .final-section-text h2 {
+        font-size: 22px;
+    }
+
+    .final-section-text p {
+        font-size: 15px;
+    }
+
+    .buy-now-link {
+        font-size: 11px;
+    }
+}
