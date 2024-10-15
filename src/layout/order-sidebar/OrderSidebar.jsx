@@ -60,7 +60,7 @@ export default function OrderSidebar() {
                   className="order-image"
                   src={
                     product.image 
-                      ? `${import.meta.env.VITE_IMAGES_URL}/products/${product.image}` 
+                      ? `${import.meta.env.VITE_IMAGES_URL}/images/products/${product.image}` 
                       : "https://nayemdevs.com/wp-content/uploads/2020/03/default-product-image.png"
                   }
                   alt={product.name || "Nombre no disponible"}
