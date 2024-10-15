@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./ProductCard.css";
-import { faBagShopping, faEye } from "@fortawesome/free-solid-svg-icons"; // Actualizado
+import { faBagShopping, faEye } from "@fortawesome/free-solid-svg-icons"; 
 import { useOrder } from "../../context/OrderContext.jsx";
 
 export default function ProductCard({ product }) {
@@ -11,14 +11,17 @@ export default function ProductCard({ product }) {
 
   const handleHeartClick = () => {
     setHeartActive(!heartActive);
-    addOrderItem(product); // Añadir el producto a la orden cuando se hace clic en el corazón
+    addOrderItem(product); 
   };
 
   return (
     <article className="product-card">
       <div className="card-header">
         <div className="product-image">
-          <img src={`http://localhost:3000/images/products/${product.image}`} alt={product.name} />
+          <img 
+            src={`${import.meta.env.VITE_IMAGES_URL}/products/${product.image}`} 
+            alt={product.name} 
+          />
           <div className="button-container">
             <Link className="btn-icon btn-icon-eye" to={`/product-detail/${product._id}`}>
               <FontAwesomeIcon 
@@ -30,7 +33,7 @@ export default function ProductCard({ product }) {
               className={`btn-icon btn-icon-bag ${heartActive ? 'active' : ''}`}
               onClick={handleHeartClick}
             >
-              <FontAwesomeIcon icon={faBagShopping} /> {/* Actualizado */}
+              <FontAwesomeIcon icon={faBagShopping} /> 
             </button>
           </div>
         </div>
@@ -43,7 +46,7 @@ export default function ProductCard({ product }) {
           $ {product.price}
         </div>
       </div>
-      {/* Elimina la sección de código para el botón de "Añadir" */}
+     
     </article>
   );
 }
