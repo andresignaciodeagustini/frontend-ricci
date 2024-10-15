@@ -14,12 +14,17 @@ export default function ProductCard({ product }) {
     addOrderItem(product); 
   };
 
+  // Determina la URL correcta de la imagen
+  const imageUrl = window.location.protocol === "https:" 
+    ? `https://backend-ricci-1.onrender.com/images/products/${product.image}`
+    : `http://localhost:3000/images/products/${product.image}`;
+
   return (
     <article className="product-card">
       <div className="card-header">
         <div className="product-image">
           <img 
-            src={`${import.meta.env.VITE_IMAGES_URL}/products/${product.image}`} 
+            src={imageUrl}  // Usa la URL corregida aquí
             alt={product.name} 
           />
           <div className="button-container">
@@ -46,7 +51,6 @@ export default function ProductCard({ product }) {
           $ {product.price}
         </div>
       </div>
-     
     </article>
   );
 }

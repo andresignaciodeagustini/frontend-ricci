@@ -64,6 +64,11 @@ const ProductDetail = () => {
     return <h4>Producto no encontrado</h4>;
   }
 
+  // Determina el protocolo correcto (http o https)
+  const imageUrl = window.location.protocol === "https:" 
+    ? `https://backend-ricci-1.onrender.com/images/products/${product.image}`
+    : `http://localhost:3000/images/products/${product.image}`;
+
   return (
     <>
       <Header isProductDetailPage={true} />
@@ -71,7 +76,7 @@ const ProductDetail = () => {
         <section className="product-details">
           <div className="product-header">
             <div className="image-detail">
-              <img src={`http://localhost:3000/images/products/${product.image}`} alt={product.name} />
+              <img src={imageUrl} alt={product.name} />
             </div>
             <div className="product-action">
               <h2>{product.name}</h2>

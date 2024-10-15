@@ -239,7 +239,7 @@ export default function AdminUser() {
                 <td>
                   <img
                     className="user-image"
-                    src={`http://localhost:3000/images/users/${user.image}`}
+                    src={`https://frontend-ricci-2.onrender.com/images/products/${product.image}`}
                     alt={user.fullname} // Updated to 'fullname'
                   />
                 </td>

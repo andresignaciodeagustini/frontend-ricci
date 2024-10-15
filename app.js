@@ -1,31 +1,34 @@
-const express = require("express")
+const express = require("express");
 const app = express();
-const cors = require ('cors');
+const cors = require('cors');
+const api_routes = require("./routes/index");
 
+// Compartir la carpeta 'public' para servir archivos estáticos (imágenes, etc.)
+app.use(express.static('public'));
 
-
-const api_routes = require("./routes/index")
-
-
-//share public folder
-app.use(express.static('public'))
-
-// Middlewares
-
-//CORS
+// Configuración de CORS
+const allowedOrigins = [
+    'http://localhost:5173',  // Origen local para desarrollo
+    'https://frontend-ricci-2.onrender.com'  // Origen de producción en Render
+];
 
 app.use(cors({
-    origin: 'http://localhost:5173', // La URL de tu frontend
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
+    origin: function (origin, callback) {
+        // Permitir el origen si está en la lista de permitidos o si no hay origen (caso de ciertas solicitudes)
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('No permitido por CORS'));
+        }
+    },
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+}));
 
-}))
+// Middleware para interpretar datos JSON en el body de las peticiones
+app.use(express.json());
 
-
-// poder interpretar los datos que vienen en el body de una petición
-app.use(express.json())
-
-app.use("/api", 
-api_routes)
+// Usar las rutas definidas en index.js
+app.use("/api", api_routes);
 
 module.exports = app;

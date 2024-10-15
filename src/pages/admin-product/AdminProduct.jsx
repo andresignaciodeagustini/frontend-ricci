@@ -282,7 +282,7 @@ async function updateProduct(productFormData) {
                   <tbody>
           {products.map((product) => (
             <tr key={product._id}> {/* Asegúrate de que cada "product" tenga una clave única */}
-              <td><img src={`http://localhost:3000/images/products/${product.image}`} alt={product.name} /></td>
+              <td><img src={`https://backend-ricci-1.onrender.com/images/products/${product.image}`} alt={product.name} /></td>
               <td>{product.name}</td>
               <td>{product.description}</td>
               <td>{new Date(product.createdAt).toLocaleDateString()}</td>
